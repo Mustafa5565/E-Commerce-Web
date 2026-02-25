@@ -7,7 +7,7 @@ const CheckoutPage = () => {
     <div>
         <title>Checkout</title>
          <div className="checkout-header">
-            <h1>checkout</h1>
+          
       <div className="header-content">
         <div className="checkout-header-left-section">
           <a href="/">

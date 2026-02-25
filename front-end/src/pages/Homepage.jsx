@@ -3,10 +3,8 @@ import Header from '../components/Header.jsx'
 import { products } from '../../starting-code/data/products.js'
 import './Homepage.css'
 
-
-
-
 const Homepage = () => {
+  
   return (
     <div>
       <title>HomePage</title>
