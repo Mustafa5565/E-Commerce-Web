@@ -2,21 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './header.css'
 
-const Header = ({ cart }) => {
-  let totalQuantity = 0;
+const Header = ({ cart=[] }) => {
+ 
 
-  cart.forEach((cartItem) => {
-    totalQuantity += cartItem.quantity
-  })
+ const totalQuantity = cart.reduce((total, item) => {
+    return total + (item.quantity || 0);  // safe if quantity is missing
+  }, 0);
   return (
     <div>
       <div className="header">
         <div className="left-section">
           <Link to="/" className="header-link">
             <img className="logo"
-              src="images/logo-white.png" />
+              src="/images/logo-white.png" />
             <img className="mobile-logo"
-              src="images/mobile-logo-white.png" />
+              src="/images/mobile-logo-white.png" />
           </Link>
         </div>
 
@@ -24,7 +24,7 @@ const Header = ({ cart }) => {
           <input className="search-bar" type="text" placeholder="Search" />
 
           <button className="search-button">
-            <img className="search-icon" src="images/icons/search-icon.png" />
+            <img className="search-icon" src="/images/icons/search-icon.png" />
           </button>
         </div>
 
@@ -35,7 +35,7 @@ const Header = ({ cart }) => {
           </Link>
 
           <Link className="cart-link header-link" to="/checkout">
-            <img className="cart-icon" src="images/icons/cart-icon.png" />
+            <img className="cart-icon" src="/images/icons/cart-icon.png" />
             <div className="cart-quantity">{totalQuantity}</div>
             <div className="cart-text">Cart</div>
           </Link>

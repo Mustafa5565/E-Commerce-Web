@@ -10,9 +10,9 @@ const Orders = () => {
       <div className="left-section">
         <a href="/" className="header-link">
           <img className="logo"
-            src="images/logo-white.png" />
+            src="/images/logo-white.png" />
           <img className="mobile-logo"
-            src="images/mobile-logo-white.png" />
+            src="/images/mobile-logo-white.png" />
         </a>
       </div>
 
@@ -20,7 +20,7 @@ const Orders = () => {
         <input className="search-bar" type="text" placeholder="Search" />
 
         <button className="search-button">
-          <img className="search-icon" src="images/icons/search-icon.png" />
+          <img className="search-icon" src="/images/icons/search-icon.png" />
         </button>
       </div>
 
@@ -31,7 +31,7 @@ const Orders = () => {
         </a>
 
         <a className="cart-link header-link" href="/checkout">
-          <img className="cart-icon" src="images/icons/cart-icon.png" />
+          <img className="cart-icon" src="/images/icons/cart-icon.png" />
           <div className="cart-quantity">3</div>
           <div className="cart-text">Cart</div>
         </a>
@@ -64,7 +64,7 @@ const Orders = () => {
 
           <div className="order-details-grid">
             <div className="product-image-container">
-              <img src="images/products/athletic-cotton-socks-6-pairs.jpg" />
+              <img src="/images/products/athletic-cotton-socks-6-pairs.jpg" />
             </div>
 
             <div className="product-details">
@@ -78,7 +78,7 @@ const Orders = () => {
                 Quantity: 1
               </div>
               <button className="buy-again-button button-primary">
-                <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                <img className="buy-again-icon" src="/images/icons/buy-again.png" />
                 <span className="buy-again-message">Add to Cart</span>
               </button>
             </div>
@@ -92,7 +92,7 @@ const Orders = () => {
             </div>
 
             <div className="product-image-container">
-              <img src="images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg" />
+              <img src="/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg" />
             </div>
 
             <div className="product-details">
@@ -106,7 +106,7 @@ const Orders = () => {
                 Quantity: 2
               </div>
               <button className="buy-again-button button-primary">
-                <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                <img className="buy-again-icon" src="/images/icons/buy-again.png" />
                 <span className="buy-again-message">Add to Cart</span>
               </button>
             </div>
@@ -143,7 +143,7 @@ const Orders = () => {
 
           <div className="order-details-grid">
             <div className="product-image-container">
-              <img src="images/products/intermediate-composite-basketball.jpg" />
+              <img src="/images/products/intermediate-composite-basketball.jpg" />
             </div>
 
             <div className="product-details">
@@ -157,7 +157,7 @@ const Orders = () => {
                 Quantity: 2
               </div>
               <button className="buy-again-button button-primary">
-                <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                <img className="buy-again-icon" src="/images/icons/buy-again.png" />
                 <span className="buy-again-message">Add to Cart</span>
               </button>
             </div>
