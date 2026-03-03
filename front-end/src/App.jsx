@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Routes, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import CheckoutPage from './pages/CheckoutPage'
@@ -7,11 +8,24 @@ import './App.css'
 import TrackingPage from './pages/TrackingPage'
 
 function App() {
+  const[cart , setCart]= useState([])
+
+  useEffect(()=>{
+    axios.get('/api/cart-items')
+      .then((response)=>{
+          setCart(response.data);
+      })
+      .catch((err)=>{
+          console.error('Failed to fetch cart items', err);
+         
+      });
+  },[])
+    
   return (
     <>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/" element={<Homepage cart={cart} />} />
+        <Route path="/checkout" element={<CheckoutPage cart={cart} />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/tracking" element={<TrackingPage />} />
       </Routes>

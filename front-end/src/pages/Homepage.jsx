@@ -8,7 +8,8 @@ import './Homepage.css'
 const Homepage = () => {
 
   const[products ,setProducts]= useState([])
-  const[cart , setCart]= useState([])
+  const[cart , setCart] =useState([])
+  
   // fetch('http://localhost:3000/api/products')
   // .then((response)=>{
   //   response.json().then((data)=>{
@@ -24,25 +25,14 @@ const Homepage = () => {
     console.error('Failed to fetch products', err);
   });
 
-
-  axios.get('/api/cart-items')
-    .then((response)=>{
-        setCart(response.data);
-    })
-    .catch((err)=>{
-        console.error('Failed to fetch cart items', err);
-       
-    });
-
  },[])
-  
-
   
 
   useEffect(() => {
     document.title = 'HomePage';
   }, []);
 
+  
   return (
     <div>
       <Header cart={cart} />
