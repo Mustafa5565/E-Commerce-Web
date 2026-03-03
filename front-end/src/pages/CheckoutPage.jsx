@@ -2,7 +2,7 @@ import React from 'react'
 import './checkout/checkout-header.css'
 import './checkout/checkout.css'
 
-const CheckoutPage = () => {
+const CheckoutPage = ({cart =[]}) => {
   return (
     <div>
         <title>Checkout</title>
@@ -32,21 +32,23 @@ const CheckoutPage = () => {
 
       <div className="checkout-grid">
         <div className="order-summary">
-          <div className="cart-item-container">
+          {cart.map((cartItem)=>{
+            return(
+               <div key={cartItem.productId} className="cart-item-container">
             <div className="delivery-date">
               Delivery date: Tuesday, June 21
             </div>
 
             <div className="cart-item-details-grid">
               <img className="product-image"
-                src="images/products/athletic-cotton-socks-6-pairs.jpg" />
+                src={cartItem.product.image} />
 
               <div className="cart-item-details">
                 <div className="product-name">
-                  Black and Gray Athletic Cotton Socks - 6 Pairs
+                  {cartItem.product.name}
                 </div>
                 <div className="product-price">
-                  $10.90
+                  ${cartItem.product.price/100}
                 </div>
                 <div className="product-quantity">
                   <span>
@@ -107,6 +109,9 @@ const CheckoutPage = () => {
               </div>
             </div>
           </div>
+            )
+          })}
+         
 
           <div className="cart-item-container">
             <div className="delivery-date">
