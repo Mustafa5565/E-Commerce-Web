@@ -14,7 +14,7 @@ const Orders = () => {
     .catch((err)=>{
       console.log('Failed to get data for orders',err)
     })
-  })
+  },[])
   return (
     <div>
         <title>Orders</title>
