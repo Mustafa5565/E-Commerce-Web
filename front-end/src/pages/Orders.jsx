@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import './orders.css'
+import axios from 'axios'
 
 
 const Orders = () => {
+  const[orders, setOrders] = useState([])
+  
+  useEffect(()=>{
+    axios.get('/api/orders')
+    .then((repsonse)=>{
+      setOrders(repsonse.data)
+    })
+    .catch((err)=>{
+      console.log('Failed to get data for orders',err)
+    })
+  })
   return (
     <div>
         <title>Orders</title>

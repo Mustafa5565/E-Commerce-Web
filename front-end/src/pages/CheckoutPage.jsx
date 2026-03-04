@@ -1,8 +1,41 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import axios from 'axios'
 import './checkout/checkout-header.css'
 import './checkout/checkout.css'
 
 const CheckoutPage = ({cart =[]}) => {
+  const [deliveryOptions, setDeliveryOptions] = useState([])
+  const[paymentSummary, setPaymentSummary] = useState(null)
+
+  useEffect(() => {
+    // absolute URL ensures Vite's proxy is used (leading slash)
+    axios.get('/api/delivery-options?expand=estimatedDeliveryTime')
+      .then((response) => {
+        setDeliveryOptions(response.data)
+      })
+      .catch((err) => {
+        console.log('failed to get Delivery data', err)
+      })
+  }, [])
+
+
+
+  useEffect(() => {
+    // use an absolute path so the proxy sees it
+    console.log('fetching payment summary...');
+    axios.get('/api/payment-summary')
+      .then((response) => {      
+        console.log('CheckoutPage mounted');
+        setPaymentSummary(response.data);
+        console.log('payment summary response', response.data);
+      })
+      .catch((err) => {
+        console.log("could not retrieve data for payment summary", err);
+      });
+  }, []);
+
+  
+
   return (
     <div>
         <title>Checkout</title>
