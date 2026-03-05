@@ -7,7 +7,7 @@ const Orders = () => {
   const[orders, setOrders] = useState([])
   
   useEffect(()=>{
-    axios.get('/api/orders')
+    axios.get('/api/orders?expand=products')
     .then((repsonse)=>{
       setOrders(repsonse.data)
     })
